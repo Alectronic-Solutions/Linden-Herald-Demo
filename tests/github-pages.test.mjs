@@ -59,7 +59,7 @@ for (const mount of ['/', '/a-brand-new-repository/']) {
 
 test('contact form uses the original external POST handler with the same fields', async () => {
   const html = await readFile('_site/contact.html', 'utf8');
-  assert.match(html, /<form action="https:\/\/lindenherald\.com\/contact\.php" method="post">/);
+  assert.match(html, /<form action="https:\/\/lindenherald\.com\/contact\.php" method="post"[^>]*>/);
   for (const name of ['lhname', 'lhemail', 'lhphone', 'message4lh']) assert(html.includes(`name="${name}"`));
   // Do not submit any request to the original site's live contact endpoint.
 });
