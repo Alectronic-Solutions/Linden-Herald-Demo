@@ -1,7 +1,7 @@
 // Serves a build the way GitHub Pages and Cloudflare do: extensionless page
 // URLs, a 404 page, and no server-side code. The default mount matches the
 // GitHub Pages project URL.
-//   npm run preview   ->  http://localhost:4173/Linden-Herald-Demo/
+//   npm run preview (or npm run dev)  ->  http://localhost:4173/Linden-Herald-Demo/
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';

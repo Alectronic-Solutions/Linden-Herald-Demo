@@ -384,6 +384,22 @@ html:not(.js) #menu .has-dropdown > a {
   margin-top: 0;
 }
 
+/* Blanks the owner fills in on the privacy policy draft */
+.fill-in {
+  padding: 1px 4px;
+  border-bottom: 2px dashed #a67c00;
+  border-radius: 3px;
+  background: #fff1b8;
+  color: var(--ink);
+}
+
+.post .draft-note {
+  padding: 14px 18px;
+  border-left: 4px solid #a67c00;
+  border-radius: var(--radius);
+  background: var(--cream);
+}
+
 /* Newspaper image and sidebar */
 .newspaper {
   margin: 0;
@@ -1523,6 +1539,13 @@ button[type="submit"]:hover {
   font-size: 0.9375rem;
 }
 
+#footer .footer-bottom-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 1rem;
+}
+
 #footer .back-to-top {
   display: inline-flex;
   align-items: center;
@@ -1846,6 +1869,23 @@ button[type="submit"]:hover {
 
   .page-actions .button {
     width: 100%;
+  }
+
+  .home-page .post {
+    text-align: center;
+  }
+
+  .home-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .home-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .home-page .page-actions {
+    flex-direction: column;
+    align-items: center;
   }
 
   #sidebar {

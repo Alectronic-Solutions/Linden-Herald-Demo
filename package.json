@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "npm run preview",
     "build": "node scripts/build.mjs --target=cloudflare",
     "build:pages": "node scripts/build.mjs --target=pages",
     "preview": "node scripts/build.mjs --target=pages && node scripts/preview-server.mjs",

@@ -73,6 +73,14 @@ export const pages = [
     priority: '0.7'
   },
   {
+    file: 'privacy.html',
+    path: 'privacy',
+    name: 'Privacy Policy',
+    title: 'Privacy Policy | Linden Herald',
+    description: 'How the Linden Herald website collects, uses and protects the information you share with us, including messages sent through our contact form.',
+    priority: '0.3'
+  },
+  {
     file: '404.html',
     path: '404',
     title: 'Page Not Found | Linden Herald',
