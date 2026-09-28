@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Linden Herald copy
 
 A snapshot of https://lindenherald.com/ taken September 10, 2026.
@@ -63,3 +64,6 @@ The original private PHP source and mail backend are not publicly available. Whe
 The original stylesheet references two unused images (`images/img03.jpg` and `images/img10.jpg`) which return 404 at the source. Their unused CSS rules have been left unchanged rather than inventing replacements.
 
 This is a captured version. Later updates to the live site and its archive do not automatically appear here.
+=======
+# Linden Herald 
+>>>>>>> ac4d226abecfd8a95223c66a7ab23a0255ed1bb1
