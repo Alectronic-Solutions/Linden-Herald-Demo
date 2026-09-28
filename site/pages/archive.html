@@ -1,0 +1,28 @@
+<div id="page-bgtop">
+    <div id="content">
+        <div class="post">
+            <p class="eyebrow">From the pages of the Herald</p>
+            <h1 class="title">The newspaper archive</h1>
+            <div class="entry">
+                <p class="lead">A record of life in our community.</p>
+                <p>Read past issues of the Linden Herald below. Additional copies dating to 1959 are available for review at the Stockton Public Library.</p>
+                <p class="archive-note">Click or tap a front page to read that issue. Each issue opens as a PDF in a new tab.</p>
+                {{issues}}
+                <div class="subscription-offer">
+                    <p class="eyebrow">Support your local newspaper</p>
+                    <h2>Don&rsquo;t miss next week&rsquo;s issue</h2>
+                    <p class="subscription-price"><strong>$42</strong> <span>a year, less than $1 an issue</span></p>
+                    <p>The Linden Herald is locally owned. No chain, no corporate owner. Your subscription helps pay for a reporter covering Linden&rsquo;s schools, sports and community news. Skip the screen and get the real paper in your mailbox every week, easier to read and worth keeping.</p>
+                    <a class="button button-block" href="subscribe">Subscribe today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar">
+        {{> newspaper}}
+        <aside class="sidebar-card" aria-label="Subscribe and advertise">
+            {{> sidebar-subscribe}}
+            {{> sidebar-advertise}}
+        </aside>
+    </div>
+</div>

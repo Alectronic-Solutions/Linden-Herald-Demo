@@ -1,3 +1,3 @@
 # Linden Herald
 
-https://lindenherald.com/
+https://alectronic-solutions.github.io/Linden-Herald-Demo

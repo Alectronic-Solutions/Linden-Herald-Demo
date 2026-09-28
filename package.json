@@ -1,16 +1,13 @@
 {
-  "name": "linden-herald-copy",
-  "version": "1.0.0",
+  "name": "linden-herald",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "start": "node scripts/serve.mjs",
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/verify.mjs",
-    "build:pages": "node scripts/build-github-pages.mjs",
-    "test:pages": "node --test tests/github-pages.test.mjs",
-    "preview:pages": "node scripts/preview-github-pages.mjs"
+    "build": "node scripts/build.mjs --target=cloudflare",
+    "build:pages": "node scripts/build.mjs --target=pages",
+    "preview": "node scripts/build.mjs --target=pages && node scripts/preview-server.mjs",
+    "test": "node --test tests/site.test.mjs"
   },
   "engines": {
     "node": ">=22"

@@ -1,0 +1,60 @@
+<div id="page-bgtop">
+    <div id="content">
+        <div class="post">
+            <p class="eyebrow">We would like to hear from you</p>
+            <h1 class="title">Contact the Linden Herald</h1>
+            <div class="entry">
+                <p class="lead">Your news, questions and comments are welcome.</p>
+                <p>Get in touch for news tips, subscriptions, legal notices or display advertising. We will answer the phone or return your call as soon as we can.</p>
+                <div class="contact-details">
+                    <div>
+                        <h2>Give us a call</h2>
+                        <a class="contact-number" href="tel:+12097728854">(209) 772-8854</a>
+                        <p>Our phone line is available 24 hours, 7 days a week.</p>
+                    </div>
+                    <div>
+                        <h2>Write to us</h2>
+                        <address><strong>Linden Herald</strong><br>PO Box 929<br>Linden, CA 95236</address>
+                    </div>
+                </div>
+                <form id="contact-form">
+                    <fieldset>
+                        <legend>Send a message</legend>
+                        <p class="form-hint">Please include an email address or phone number so we can reply.</p>
+                        <div class="form-field">
+                            <label for="lhname">Name</label>
+                            <input type="text" name="lhname" id="lhname" maxlength="40" autocomplete="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="lhemail">Email</label>
+                            <input type="email" name="lhemail" id="lhemail" maxlength="60" autocomplete="email">
+                        </div>
+                        <div class="form-field">
+                            <label for="lhphone">Phone</label>
+                            <input type="tel" name="lhphone" id="lhphone" maxlength="20" autocomplete="tel">
+                        </div>
+                        <div class="form-field">
+                            <label for="message4lh">Message</label>
+                            <textarea name="message4lh" id="message4lh" rows="8" required></textarea>
+                        </div>
+                        <button type="submit">Send message</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar">
+        {{> newspaper}}
+        <aside class="sidebar-card" aria-label="Subscribe and advertise">
+            {{> sidebar-subscribe}}
+            {{> sidebar-advertise}}
+        </aside>
+    </div>
+</div>
+<div class="demo-modal-overlay" id="demo-modal" hidden>
+    <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" aria-describedby="demo-modal-desc">
+        <h2 id="demo-modal-title">Thank you!</h2>
+        <p id="demo-modal-desc">This is a demo built by <a href="https://alectronicsolutions.com" target="_blank" rel="noopener">Alectronic Solutions<span class="visually-hidden"> (opens in a new tab)</span></a>. No message was actually sent.</p>
+        <button type="button" class="button" id="demo-modal-close">Close</button>
+    </div>
+</div>

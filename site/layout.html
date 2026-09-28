@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body{{bodyClass}}>
+<a class="skip-link" href="#page">Skip to content</a>
+<header id="header">
+    <div class="masthead-inner">
+        <div id="logo">
+            <p class="masthead-name"><a href="./">Linden Herald</a></p>
+            <p><em>serving San Joaquin County since 1959</em></p>
+        </div>
+        <p class="publication-note"><span>Linden, California</span><span>Published weekly</span></p>
+    </div>
+</header>
+<nav id="menu" aria-label="Main navigation">
+    <div class="menu-bar">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+        <ul class="menu-links" id="menu-links">
+            <li data-nav="index"><a href="./">Home</a></li>
+            <li data-nav="about"><a href="about">About</a></li>
+            <li data-nav="advertise" class="has-dropdown">
+                <a href="advertise">Advertise</a>
+                <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
+                <ul class="dropdown" id="advertise-menu">
+                    <li><a href="advertise#legal-notices">Legal notices &amp; rates</a></li>
+                    <li><a href="advertise#display-advertising">Display advertising</a></li>
+                </ul>
+            </li>
+            <li data-nav="archive"><a href="archive">Archive</a></li>
+            <li data-nav="contact"><a href="contact">Contact</a></li>
+        </ul>
+        <div class="menu-actions">
+            <a data-nav="subscribe" class="menu-subscribe" href="subscribe">Subscribe</a>
+            <a class="menu-phone" href="tel:+12097728854">{{> icon-phone}}<span class="menu-phone-label">Call</span><span class="menu-phone-number">(209) 772-8854</span></a>
+        </div>
+    </div>
+</nav>
+<main id="page" tabindex="-1">
+{{main}}
+</main>
+<footer id="footer">
+    <div class="footer-inner">
+        <div class="footer-identity">
+            <a class="footer-brand" href="./">Linden Herald</a>
+            <p class="footer-tagline">Serving San Joaquin County since 1959.</p>
+            <p>Linden&rsquo;s weekly community newspaper: local news, sports, agriculture, schools and public notices.</p>
+            <p class="footer-legal">Adjudicated newspaper of general circulation, San Joaquin County Superior Court Decree No. 72641.</p>
+        </div>
+        <nav class="footer-column" aria-label="Services">
+            <h2 class="footer-heading">Services</h2>
+            <ul class="footer-links">
+                <li><a href="subscribe">Subscribe</a></li>
+                <li><a href="advertise#display-advertising">Display advertising</a></li>
+                <li><a href="advertise#legal-notices">Legal notices</a></li>
+                <li><a href="archive">Newspaper archive</a></li>
+            </ul>
+        </nav>
+        <nav class="footer-column" aria-label="The Herald">
+            <h2 class="footer-heading">The Herald</h2>
+            <ul class="footer-links">
+                <li><a href="./">Home</a></li>
+                <li><a href="about">About us</a></li>
+                <li><a href="./#services">Our services</a></li>
+                <li><a href="contact">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="footer-contact">
+            <h2 class="footer-heading">Contact us</h2>
+            <address>Linden Herald<br>PO Box 929<br>Linden, CA 95236</address>
+            <a class="footer-phone" href="tel:+12097728854">{{> icon-phone}}(209) 772-8854</a>
+            <p class="footer-hours">Phone answered 24 hours,<br>7 days a week.</p>
+            <p><a href="contact">Send us a message</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{year}} Linden Herald. All rights reserved.</p>
+        <p>Linden, California &middot; Published weekly</p>
+        <a class="back-to-top" href="#header">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+    <div class="footer-credit">
+        <p>Website designed by <a href="https://alectronicsolutions.com" target="_blank" rel="noopener">Alectronic Solutions<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+    </div>
+</footer>
+</body>
+</html>

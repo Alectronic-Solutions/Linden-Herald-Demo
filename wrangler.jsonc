@@ -1,14 +1,13 @@
+// Production hosting on Cloudflare (lindenherald.com). Build first:
+//   npm run build && npx wrangler deploy
+// The site is fully static; _site/_headers and _site/_redirects are applied
+// automatically (cache and security headers, 301s from the old .php pages).
 {
-  "name": "linden-herald-copy",
-  "main": "dist/server/index.js",
-  "compatibility_date": "2026-09-10",
-  "compatibility_flags": ["nodejs_compat"],
+  "name": "linden-herald",
+  "compatibility_date": "2026-09-28",
   "assets": {
-    "directory": "dist/client",
-    "binding": "ASSETS",
-    "run_worker_first": true,
-    "html_handling": "none",
-    "not_found_handling": "none"
-  },
-  "observability": { "enabled": true, "head_sampling_rate": 1 }
+    "directory": "_site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
 }

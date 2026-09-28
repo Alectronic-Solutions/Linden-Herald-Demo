@@ -1,7 +1,5 @@
-.sites-runtime/
 node_modules/
-*.tgz
-*.tar.gz
+_site/
+.wrangler/
 .artifacts/
 .playwright-cli/
-_site/
