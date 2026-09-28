@@ -35,7 +35,9 @@ npm run preview:pages
 
 Open `http://localhost:4173/repository-preview/`. This preview deliberately uses a repository subpath and ordinary static HTML serving, like a GitHub project site. The checks exercise both root and repository-subpath URLs, navigation, images, stylesheet assets, unchanged PDFs, and the contact form's target without sending a message.
 
-Edit the source pages and styles in `dist/client`, then build again. `_site/` is generated and ignored by Git. The repository does not need an `npm install` step or a lockfile because it has no external package dependencies.
+Edit the source pages and styles in `dist/client`, then build again.
+
+The archive page shows each issue's front page as a preview (`dist/client/images/covers/YYYY-MM-DD.jpg`, about 70 KB each), so readers see the cover without downloading the PDF. After adding a new PDF to `dist/client/archive/`, run `python scripts/make-covers.py` (needs `pip install pymupdf`) to create its cover, then add its entry to `archive.php`. `_site/` is generated and ignored by Git. The repository does not need an `npm install` step or a lockfile because it has no external package dependencies.
 
 ## Run the original Sites/local version
 

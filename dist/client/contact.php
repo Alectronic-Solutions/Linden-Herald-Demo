@@ -44,8 +44,8 @@ Released   : 20100705
                         <a href="advertise.php">Advertise</a>
                         <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
                         <ul class="dropdown" id="advertise-menu">
-                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                             <li><a href="advertise.php#legal-notices">Legal notices &amp; rates</a></li>
+                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                         </ul>
                     </li>
                     <li><a href="archive.php">Archive</a></li>
@@ -67,12 +67,12 @@ Released   : 20100705
                         <h1 class="title">Contact the Linden Herald</h1>
         				<div class="entry">
                             <p class="lead">Your news, questions and comments are welcome.</p>
-                            <p>Get in touch for news tips, subscriptions, legal notices or display advertising. We will answer the phone or return your call as soon as we can.</p>
+                            <p>Get in touch for news tips, subscriptions, legal notices or display advertising.<br />We will answer the phone or return your call as soon as we can.</p>
                             <div class="contact-details">
-                                <div><h2>Give us a call</h2><a class="contact-number" href="tel:+12097728854">(209) 772-8854</a><p>Our phone line is available 24 hours, seven days a week.</p></div>
+                                <div><h2>Give us a call</h2><a class="contact-number" href="tel:+12097728854">(209) 772-8854</a><p>Our phone line is available 24 hours, 7 days a week.</p></div>
                                 <div><h2>Write to us</h2><address><strong>Linden Herald</strong><br />PO Box 929<br />Linden, CA 95236</address></div>
                             </div>
-                            <form action="contact.php" method="post">
+                            <form action="contact.php" method="post" id="contact-form">
                                 <fieldset>
                                     <legend>Send a Message</legend>
                                     <div class="form-field">
@@ -114,7 +114,7 @@ Released   : 20100705
                     </div>
                     <div class="sidebar-section">
                         <h2>Advertise or place a notice</h2>
-                        <p>Legal notices from </figure>05. Display advertising rates on request.</p>
+                        <p>Legal notices from $105. Display advertising rates on request.</p>
                         <a class="sidebar-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call (209) 772-8854</a>
                     </div>
                     </aside>
@@ -154,7 +154,7 @@ Released   : 20100705
                     <h2 class="footer-heading">Contact us</h2>
                     <address>Linden Herald<br />PO Box 929<br />Linden, CA 95236</address>
                     <a class="footer-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>(209) 772-8854</a>
-                    <p class="footer-hours">Phone answered 24 hours, seven days a week.</p>
+                    <p class="footer-hours">Phone answered 24 hours,<br>7 days a week.</p>
                     <p><a href="contact.php">Send us a message</a></p>
                 </div>
             </div>
@@ -168,5 +168,12 @@ Released   : 20100705
             </div>
         </footer>
         <!-- end #footer -->
+        <div class="demo-modal-overlay" id="demo-modal" hidden>
+            <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" aria-describedby="demo-modal-desc">
+                <h2 id="demo-modal-title">Thank you!</h2>
+                <p id="demo-modal-desc">This is a demo built by <a href="https://alectronicsolutions.com" target="_blank" rel="noopener">Alectronic Solutions<span class="visually-hidden"> (opens in a new tab)</span></a>. No message was actually sent.</p>
+                <button type="button" class="button" id="demo-modal-close">Close</button>
+            </div>
+        </div>
     </body>
 </html>

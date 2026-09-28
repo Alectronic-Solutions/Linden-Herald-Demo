@@ -44,8 +44,8 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                         <a href="advertise.php">Advertise</a>
                         <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
                         <ul class="dropdown" id="advertise-menu">
-                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                             <li><a href="advertise.php#legal-notices">Legal notices &amp; rates</a></li>
+                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                         </ul>
                     </li>
                     <li><a href="archive.php">Archive</a></li>
@@ -111,7 +111,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                                                 and work in Linden and are available at
                                                 any time. Our phone number is available 24 hours, seven
                                                 days a week at <a href="tel:+12097728854">209-772-8854</a>.</p>
-                            <div class="page-actions"><a class="button" href="subscribe.php">Subscribe to the Herald <span aria-hidden="true">&rarr;</span></a><a class="text-link" href="contact.php">Get in touch <span aria-hidden="true">&rarr;</span></a></div>
+                            <div class="page-actions"><a class="button" href="subscribe.php">Subscribe to the Herald<span aria-hidden="true">&rarr;</span></a><a class="text-link" href="contact.php">Get in touch<span aria-hidden="true">&rarr;</span></a></div>
         
         				</div>
         			</div>
@@ -133,7 +133,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                     </div>
                     <div class="sidebar-section">
                         <h2>Advertise or place a notice</h2>
-                        <p>Legal notices from </figure>05. Display advertising rates on request.</p>
+                        <p>Legal notices from $105. Display advertising rates on request.</p>
                         <a class="sidebar-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call (209) 772-8854</a>
                     </div>
                     </aside>
@@ -173,7 +173,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                     <h2 class="footer-heading">Contact us</h2>
                     <address>Linden Herald<br />PO Box 929<br />Linden, CA 95236</address>
                     <a class="footer-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>(209) 772-8854</a>
-                    <p class="footer-hours">Phone answered 24 hours, seven days a week.</p>
+                    <p class="footer-hours">Phone answered 24 hours,<br>7 days a week.</p>
                     <p><a href="contact.php">Send us a message</a></p>
                 </div>
             </div>

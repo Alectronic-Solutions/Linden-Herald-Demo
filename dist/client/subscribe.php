@@ -44,8 +44,8 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                         <a href="advertise.php">Advertise</a>
                         <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
                         <ul class="dropdown" id="advertise-menu">
-                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                             <li><a href="advertise.php#legal-notices">Legal notices &amp; rates</a></li>
+                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
                         </ul>
                     </li>
                     <li><a href="archive.php">Archive</a></li>
@@ -67,19 +67,32 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                         <h1 class="title">Subscribe to the Linden Herald</h1>
         				<div class="entry">
                             <p class="lead">Keep up with the community, one issue at a time.</p>
-                            <p>Local news, sports, agriculture, school board meetings, community photographs, regional travel, editorials and history &mdash; delivered each week through the postal system.</p>
+                            <p>Local news, sports, agriculture, school board meetings, community photographs, regional travel, editorials and history, delivered each week through the postal system.</p>
                             <div class="subscription-offer">
                                 <p class="eyebrow">San Joaquin County delivery</p>
                                 <p class="subscription-price"><strong>$42</strong> <span>for 52 issues</span></p>
                                 <p>One year of the Linden Herald, delivered by mail.</p>
                                 <p class="fine-print">Subscription rate as of January 1, 2023.</p>
                             </div>
-                            <h2>How to subscribe</h2>
-                            <p>Send a check along with your desired delivery address to:</p>
-                            <address class="mailing-address"><strong>Linden Herald</strong><br />PO Box 929<br />Linden, CA 95236-0929</address>
+                            <h2>How subscribing works</h2>
+                            <ol>
+                                <li>Write a check or money order for $42, payable to Linden Herald.</li>
+                                <li>Mail it with your name and delivery address to the PO Box below.</li>
+                                <li>We process new subscriptions by hand, usually within a few business days.</li>
+                                <li>Your first issue arrives by mail, then one every week for the full year.</li>
+                            </ol>
+                            <p class="mailing-address-label">Mail your payment to:</p>
+                            <div class="mailing-address-block">
+                                <address class="mailing-address"><strong>Linden Herald</strong><br />PO Box 929<br />Linden, CA 95236-0929</address>
+                                <button type="button" class="copy-address-button" data-copy-text="Linden Herald&#10;PO Box 929&#10;Linden, CA 95236-0929">
+                                    <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9 3h9a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v12h9V5H9zM4 7h2v13h11v2H6a2 2 0 0 1-2-2V7z" fill="currentColor"/></svg>
+                                    <span class="copy-address-button-label">Copy address to clipboard</span>
+                                </button>
+                            </div>
                             <div class="help-note">
-                                <h2>Questions about your subscription?</h2>
-                                <p>Call <a href="tel:+12097728854">(209) 772-8854</a> or <a href="contact.php">send us a message</a>.</p>
+                                <h2>We have been doing this since <strong>1959</strong></h2>
+                                <p>The Linden Herald has been Linden's paper for more than 60 years. If your check or money order does not turn into a subscription, or your first issue does not show up, call us and we will sort it out. A real person answers the phone.</p>
+                                <p>Questions? Call <a href="tel:+12097728854">(209) 772-8854</a> or <a href="contact.php">send a message</a>.</p>
                             </div>
         				</div>
         			</div>
@@ -96,7 +109,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                     <aside class="sidebar-card" aria-label="Subscribe and advertise">
                     <div class="sidebar-section">
                         <h2>Advertise or place a notice</h2>
-                        <p>Legal notices from </figure>05. Display advertising rates on request.</p>
+                        <p>Legal notices from $105. Display advertising rates on request.</p>
                         <a class="sidebar-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call (209) 772-8854</a>
                     </div>
                     </aside>
@@ -136,7 +149,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                     <h2 class="footer-heading">Contact us</h2>
                     <address>Linden Herald<br />PO Box 929<br />Linden, CA 95236</address>
                     <a class="footer-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>(209) 772-8854</a>
-                    <p class="footer-hours">Phone answered 24 hours, seven days a week.</p>
+                    <p class="footer-hours">Phone answered 24 hours,<br>7 days a week.</p>
                     <p><a href="contact.php">Send us a message</a></p>
                 </div>
             </div>

@@ -46,3 +46,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Contact form is a demo: submitting shows a thank-you dialog instead of
+// actually sending anything.
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const modal = document.getElementById('demo-modal');
+  const closeButton = document.getElementById('demo-modal-close');
+  if (!form || !modal || !closeButton) return;
+
+  let lastFocused = null;
+
+  const openModal = () => {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    if (lastFocused) lastFocused.focus();
+  };
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    openModal();
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', event => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+});
+
+// Click-to-copy button next to the mailing address on the subscribe page.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.copy-address-button').forEach(button => {
+    const label = button.querySelector('.copy-address-button-label');
+    const defaultText = label ? label.textContent : button.textContent;
+    let resetTimer = null;
+
+    const showCopied = () => {
+      if (label) label.textContent = 'Copied!';
+      button.classList.add('is-copied');
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        if (label) label.textContent = defaultText;
+        button.classList.remove('is-copied');
+      }, 2500);
+    };
+
+    button.addEventListener('click', async () => {
+      const text = button.getAttribute('data-copy-text') || '';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        showCopied();
+      } catch (error) {
+        // Clipboard access denied or unavailable; leave the button as-is.
+      }
+    });
+  });
+});
