@@ -19,6 +19,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
         <meta name="description" content="Connect with the Linden community through display advertising and legal notices in the Linden Herald. Contact us for rates and publication details." />
         <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="refinements.css" rel="stylesheet" type="text/css" media="screen" />
+        <script src="site.js"></script>
     </head>
     <body>
         <a class="skip-link" href="#page">Skip to content</a>
@@ -33,14 +34,27 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
             </div>
         </header>
         <nav id="menu" aria-label="Main navigation">
-            <ul>
-    			<li><a href="index.php" class="first">Home</a></li>
-    			<li><a href="about.php">About</a></li>
-    			<li><a href="subscribe.php">Subscribe</a></li>
-    			<li class="current_page_item"><a aria-current="page" href="advertise.php">Advertise</a></li>
-    			<li><a href="contact.php">Contact</a></li>
-    			<li><a href="archive.php">Archive</a></li>
-    		</ul>
+            <div class="menu-bar">
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+                <ul class="menu-links" id="menu-links">
+                    <li><a href="index.php" class="first">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li class="has-dropdown current_page_item">
+                        <a aria-current="page" href="advertise.php">Advertise</a>
+                        <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
+                        <ul class="dropdown" id="advertise-menu">
+                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
+                            <li><a href="advertise.php#legal-notices">Legal notices &amp; rates</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="archive.php">Archive</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+                <div class="menu-actions">
+                    <a class="menu-subscribe" href="subscribe.php">Subscribe</a>
+                    <a class="menu-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span class="menu-phone-label">Call</span><span class="menu-phone-number">(209) 772-8854</span></a>
+                </div>
+            </div>
         </nav>
         <!-- end #header -->
         <hr />
@@ -67,12 +81,12 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                                 Family Law, trustee sales, and court summons. Our prices are
                                 very competitive.</p>
         
-                            <ul class="notice-rates">
-                                <li><strong>Fictitious business names:</strong> $105 for a single owner/one business name; $145 more for corporations, LLCs, partnerships, and husband and wife (extra names $10 each).</li>
-                                <li><strong>Family Law (divorce):</strong> $425.</li>
-                                <li><strong>Name change:</strong> $425.</li>
-                                <li><strong>Summons:</strong> $425.</li>
-                                <li><strong>Business bulk sale transfer:</strong> $425.</li>
+                            <ul class="notice-rates" aria-label="Legal notice prices">
+                                <li><span class="rate-name">Fictitious business names</span><span class="rate-price">$105</span><span class="rate-note">For a single owner/one business name. $145 more for corporations, LLCs, partnerships, and husband and wife (extra names $10 each).</span></li>
+                                <li><span class="rate-name">Family Law (divorce)</span><span class="rate-price">$425</span></li>
+                                <li><span class="rate-name">Name change</span><span class="rate-price">$425</span></li>
+                                <li><span class="rate-name">Summons</span><span class="rate-price">$425</span></li>
+                                <li><span class="rate-name">Business bulk sale transfer</span><span class="rate-price">$425</span></li>
                             </ul>
                             <p>Call <a href="tel:+12097728854">(209) 772-8854</a> for further pricing.</p>
                             <p>We will file the proof of publication
@@ -88,15 +102,11 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                                 5,000 residents inside the school district. The town limits
                                 have about 1,200 citizens.</p>
                             <div class="help-note"><h2>Let's talk about your advertisement</h2><p><a href="contact.php">Contact us for advertising rates</a> or call <a href="tel:+12097728854">(209) 772-8854</a>.</p></div>
-        
-        
-                            <h2>Mailing address</h2>
-                            <p>Our mailing address is<br />
-                                <strong>PO Box 929<br />
-                                    Linden CA 95236</strong></p>
-        
-                            <h2>Speak with us</h2>
-                            <p>24 Hours - <a href="tel:+12097728854">(209) 772-8854</a></p>
+
+                            <div class="contact-details">
+                                <div><h2>Speak with us</h2><a class="contact-number" href="tel:+12097728854">(209) 772-8854</a><p>Available 24 hours.</p></div>
+                                <div><h2>Mailing address</h2><address><strong>Linden Herald</strong><br />PO Box 929<br />Linden, CA 95236</address></div>
+                            </div>
         				</div>
         			</div>
         		</div>
@@ -109,6 +119,13 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                             <a href="archive.php">Browse the archive</a>
                         </figcaption>
                     </figure>
+                    <aside class="sidebar-card" aria-label="Subscribe and advertise">
+                    <div class="sidebar-section">
+                        <h2>Get the Herald every week</h2>
+                        <p class="sidebar-price"><strong>$42</strong> for 52 issues</p>
+                        <a class="button button-block" href="subscribe.php">Subscribe</a>
+                    </div>
+                    </aside>
         		</div>
         		<!-- end #sidebar -->
         		<div class="layout-clear" aria-hidden="true">&nbsp;</div>
@@ -120,27 +137,42 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                 <div class="footer-identity">
                     <a class="footer-brand" href="index.php">Linden Herald</a>
                     <p class="footer-tagline">Serving San Joaquin County since 1959.</p>
+                    <p>Linden&rsquo;s weekly community newspaper: local news, sports, agriculture, schools and public notices.</p>
+                    <p class="footer-legal">Adjudicated newspaper of general circulation, San Joaquin County Superior Court Decree No. 72641.</p>
                 </div>
-                <nav aria-label="Footer navigation">
+                <nav class="footer-column" aria-label="Services">
+                    <h2 class="footer-heading">Services</h2>
+                    <ul class="footer-links">
+                        <li><a href="subscribe.php">Subscribe</a></li>
+                        <li><a href="advertise.php#display-advertising">Display advertising</a></li>
+                        <li><a href="advertise.php#legal-notices">Legal notices</a></li>
+                        <li><a href="archive.php">Newspaper archive</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-column" aria-label="The Herald">
                     <h2 class="footer-heading">The Herald</h2>
                     <ul class="footer-links">
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="about.php">About us</a></li>
                         <li><a href="index.php#services">Our services</a></li>
-                        <li><a href="subscribe.php">Subscribe</a></li>
-                        <li><a href="advertise.php">Advertise</a></li>
-                        <li><a href="archive.php">Archive</a></li>
+                        <li><a href="contact.php">Contact us</a></li>
                     </ul>
                 </nav>
                 <div class="footer-contact">
-                    <h2 class="footer-heading">Get in touch</h2>
-                    <address>PO Box 929<br />Linden, CA 95236</address>
-                    <a class="footer-phone" href="tel:+12097728854">(209) 772-8854</a>
-                    <p><a href="contact.php">Contact us</a></p>
+                    <h2 class="footer-heading">Contact us</h2>
+                    <address>Linden Herald<br />PO Box 929<br />Linden, CA 95236</address>
+                    <a class="footer-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>(209) 772-8854</a>
+                    <p class="footer-hours">Phone answered 24 hours, seven days a week.</p>
+                    <p><a href="contact.php">Send us a message</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright 2026 Linden Herald</p>
-                <a class="back-to-top" href="#header">Back to top</a>
+                <p>&copy; 2026 Linden Herald. All rights reserved.</p>
+                <p>Linden, California &middot; Published weekly</p>
+                <a class="back-to-top" href="#header">Back to top <span aria-hidden="true">&uarr;</span></a>
+            </div>
+            <div class="footer-credit">
+                <p>Website designed by <a href="https://alectronicsolutions.com" target="_blank" rel="noopener">Alectronic Solutions<span class="visually-hidden"> (opens in a new tab)</span></a></p>
             </div>
         </footer>
         <!-- end #footer -->

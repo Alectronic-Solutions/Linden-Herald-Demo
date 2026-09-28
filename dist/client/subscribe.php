@@ -20,6 +20,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
         <meta name="description" content="Receive the Linden Herald by mail each week. Find subscription details and mailing instructions for San Joaquin County delivery." />
         <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="refinements.css" rel="stylesheet" type="text/css" media="screen" />
+        <script src="site.js"></script>
     </head>
     <body>
         <a class="skip-link" href="#page">Skip to content</a>
@@ -34,14 +35,27 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
             </div>
         </header>
         <nav id="menu" aria-label="Main navigation">
-            <ul>
-    			<li><a href="index.php" class="first">Home</a></li>
-    			<li><a href="about.php">About</a></li>
-    			<li class="current_page_item"><a aria-current="page" href="subscribe.php">Subscribe</a></li>
-    			<li><a href="advertise.php">Advertise</a></li>
-    			<li><a href="contact.php">Contact</a></li>
-                <li><a href="archive.php">Archive</a></li>
-    		</ul>
+            <div class="menu-bar">
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+                <ul class="menu-links" id="menu-links">
+                    <li><a href="index.php" class="first">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li class="has-dropdown">
+                        <a href="advertise.php">Advertise</a>
+                        <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="advertise-menu"><span class="visually-hidden">Show advertising pages</span><span class="caret" aria-hidden="true"></span></button>
+                        <ul class="dropdown" id="advertise-menu">
+                            <li><a href="advertise.php#display-advertising">Display advertising</a></li>
+                            <li><a href="advertise.php#legal-notices">Legal notices &amp; rates</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="archive.php">Archive</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+                <div class="menu-actions">
+                    <a class="menu-subscribe" aria-current="page" href="subscribe.php">Subscribe</a>
+                    <a class="menu-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span class="menu-phone-label">Call</span><span class="menu-phone-number">(209) 772-8854</span></a>
+                </div>
+            </div>
         </nav>
         <!-- end #header -->
         <hr />
@@ -55,7 +69,7 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                             <p class="lead">Keep up with the community, one issue at a time.</p>
                             <p>Local news, sports, agriculture, school board meetings, community photographs, regional travel, editorials and history &mdash; delivered each week through the postal system.</p>
                             <div class="subscription-offer">
-                        <p class="eyebrow">San Joaquin County delivery</p>
+                                <p class="eyebrow">San Joaquin County delivery</p>
                                 <p class="subscription-price"><strong>$42</strong> <span>for 52 issues</span></p>
                                 <p>One year of the Linden Herald, delivered by mail.</p>
                                 <p class="fine-print">Subscription rate as of January 1, 2023.</p>
@@ -79,6 +93,13 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                             <a href="archive.php">Browse the archive</a>
                         </figcaption>
                     </figure>
+                    <aside class="sidebar-card" aria-label="Subscribe and advertise">
+                    <div class="sidebar-section">
+                        <h2>Advertise or place a notice</h2>
+                        <p>Legal notices from </figure>05. Display advertising rates on request.</p>
+                        <a class="sidebar-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call (209) 772-8854</a>
+                    </div>
+                    </aside>
         		</div>
         		<!-- end #sidebar -->
         		<div class="layout-clear" aria-hidden="true">&nbsp;</div>
@@ -90,27 +111,42 @@ adapted for lindenherald.com by Larry Anderson - larry@portcommodore.com
                 <div class="footer-identity">
                     <a class="footer-brand" href="index.php">Linden Herald</a>
                     <p class="footer-tagline">Serving San Joaquin County since 1959.</p>
+                    <p>Linden&rsquo;s weekly community newspaper: local news, sports, agriculture, schools and public notices.</p>
+                    <p class="footer-legal">Adjudicated newspaper of general circulation, San Joaquin County Superior Court Decree No. 72641.</p>
                 </div>
-                <nav aria-label="Footer navigation">
+                <nav class="footer-column" aria-label="Services">
+                    <h2 class="footer-heading">Services</h2>
+                    <ul class="footer-links">
+                        <li><a href="subscribe.php">Subscribe</a></li>
+                        <li><a href="advertise.php#display-advertising">Display advertising</a></li>
+                        <li><a href="advertise.php#legal-notices">Legal notices</a></li>
+                        <li><a href="archive.php">Newspaper archive</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-column" aria-label="The Herald">
                     <h2 class="footer-heading">The Herald</h2>
                     <ul class="footer-links">
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="about.php">About us</a></li>
                         <li><a href="index.php#services">Our services</a></li>
-                        <li><a href="subscribe.php">Subscribe</a></li>
-                        <li><a href="advertise.php">Advertise</a></li>
-                        <li><a href="archive.php">Archive</a></li>
+                        <li><a href="contact.php">Contact us</a></li>
                     </ul>
                 </nav>
                 <div class="footer-contact">
-                    <h2 class="footer-heading">Get in touch</h2>
-                    <address>PO Box 929<br />Linden, CA 95236</address>
-                    <a class="footer-phone" href="tel:+12097728854">(209) 772-8854</a>
-                    <p><a href="contact.php">Contact us</a></p>
+                    <h2 class="footer-heading">Contact us</h2>
+                    <address>Linden Herald<br />PO Box 929<br />Linden, CA 95236</address>
+                    <a class="footer-phone" href="tel:+12097728854"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>(209) 772-8854</a>
+                    <p class="footer-hours">Phone answered 24 hours, seven days a week.</p>
+                    <p><a href="contact.php">Send us a message</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright 2026 Linden Herald</p>
-                <a class="back-to-top" href="#header">Back to top</a>
+                <p>&copy; 2026 Linden Herald. All rights reserved.</p>
+                <p>Linden, California &middot; Published weekly</p>
+                <a class="back-to-top" href="#header">Back to top <span aria-hidden="true">&uarr;</span></a>
+            </div>
+            <div class="footer-credit">
+                <p>Website designed by <a href="https://alectronicsolutions.com" target="_blank" rel="noopener">Alectronic Solutions<span class="visually-hidden"> (opens in a new tab)</span></a></p>
             </div>
         </footer>
         <!-- end #footer -->
