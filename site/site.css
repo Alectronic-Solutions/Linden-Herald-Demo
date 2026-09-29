@@ -581,6 +581,11 @@ html:not(.js) #menu .has-dropdown > a {
   margin-left: 10px;
 }
 
+/* Forces a line break only on phone widths; hidden (and inert) otherwise */
+.phone-break {
+  display: none;
+}
+
 .post .link-list {
   padding-left: 1.25em;
 }
@@ -1015,6 +1020,21 @@ legend {
   margin: 0 0 20px;
   color: var(--muted);
   font-size: 1rem;
+}
+
+.post .form-error {
+  margin: -8px 0 20px;
+  padding: 12px 16px;
+  border-left: 4px solid #9b1c1c;
+  border-radius: 4px;
+  background: #fdf0f0;
+  color: #9b1c1c;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.form-field input[aria-invalid="true"] {
+  border-color: #9b1c1c;
 }
 
 .form-field {
@@ -1614,19 +1634,23 @@ button[type="submit"]:hover {
 
 /* Compact navigation: a Menu button opens the full list of links. */
 @media (max-width: 960px) {
+  /* Subscribe on the left; Call and Menu in the right-hand corner. */
   html.js .menu-bar {
     flex-wrap: wrap;
     align-items: center;
+    column-gap: 10px;
     min-height: 64px;
   }
 
   html.js .menu-toggle {
+    order: 3;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
     min-height: 48px;
     margin: 8px 0;
-    padding: 0 16px;
+    padding: 0 14px;
     border: 2px solid rgb(255 255 255 / 60%);
     border-radius: 6px;
     background: transparent;
@@ -1664,7 +1688,7 @@ button[type="submit"]:hover {
 
   html.js #menu .menu-links {
     display: none;
-    order: 3;
+    order: 4;
     flex-direction: column;
     width: 100%;
     max-height: calc(100vh - 64px);
@@ -1743,8 +1767,16 @@ button[type="submit"]:hover {
   }
 
   html.js .menu-actions {
-    gap: 10px;
-    padding-left: 12px;
+    display: contents;
+  }
+
+  html.js #menu .menu-subscribe {
+    order: 1;
+    margin-right: auto;
+  }
+
+  html.js #menu .menu-phone {
+    order: 2;
   }
 
   #menu .menu-subscribe {
@@ -1810,9 +1842,14 @@ button[type="submit"]:hover {
     scroll-padding-top: 5rem;
   }
 
+  .phone-break {
+    display: inline;
+  }
+
   .masthead-inner {
     display: block;
     padding: 22px 0 20px;
+    text-align: center;
   }
 
   #logo .masthead-name {
@@ -1821,15 +1858,17 @@ button[type="submit"]:hover {
 
   #logo p {
     font-size: 1.0625rem;
+    text-align: center;
   }
 
   .publication-note {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4px 12px;
     margin-top: 10px;
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
   }
 
   .publication-note span + span::before {
@@ -1888,6 +1927,156 @@ button[type="submit"]:hover {
     align-items: center;
   }
 
+  .about-page .post {
+    text-align: center;
+  }
+
+  .about-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .about-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .about-page .page-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-page .sidebar-section {
+    text-align: center;
+  }
+
+  .about-page .sidebar-price {
+    justify-content: center;
+  }
+
+  .advertise-page .post {
+    text-align: center;
+  }
+
+  .advertise-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .advertise-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .advertise-page .section-links {
+    justify-content: center;
+  }
+
+  .advertise-page .notice-rates li {
+    text-align: center;
+  }
+
+  .advertise-page .notice-rates .rate-name {
+    text-align: left;
+  }
+
+  .advertise-page .rate-price.rate-call {
+    text-align: center;
+  }
+
+  .advertise-page .contact-details,
+  .advertise-page .contact-details > div {
+    text-align: center;
+  }
+
+  .advertise-page .sidebar-section {
+    text-align: center;
+  }
+
+  .advertise-page .sidebar-price {
+    justify-content: center;
+  }
+
+  .contact-page .post {
+    text-align: center;
+  }
+
+  .contact-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .contact-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .contact-page .contact-details,
+  .contact-page .contact-details > div {
+    text-align: center;
+  }
+
+  .contact-page fieldset {
+    text-align: center;
+  }
+
+  .contact-page .sidebar-section {
+    text-align: center;
+  }
+
+  .contact-page .sidebar-price {
+    justify-content: center;
+  }
+
+  .archive-page .post {
+    text-align: center;
+  }
+
+  .archive-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .archive-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .archive-page .sidebar-section {
+    text-align: center;
+  }
+
+  .archive-page .sidebar-price {
+    justify-content: center;
+  }
+
+  .subscribe-page .post {
+    text-align: center;
+  }
+
+  .subscribe-page .post .eyebrow {
+    text-align: center;
+  }
+
+  .subscribe-page .post .entry > :first-child {
+    margin-top: 0;
+  }
+
+  .subscribe-page .subscription-price {
+    justify-content: center;
+  }
+
+  .subscribe-page .steps {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  /* Longer steps stay left-aligned so each number lines up with its text. */
+  .advertise-page .steps {
+    padding-left: 1.5em;
+    text-align: left;
+  }
+
+  .subscribe-page .sidebar-section {
+    text-align: center;
+  }
+
+  .sidebar-lede-line {
+    display: block;
+  }
+
   #sidebar {
     position: static;
     padding-top: 24px;
@@ -1915,6 +2104,20 @@ button[type="submit"]:hover {
     padding: 22px 20px;
   }
 
+  .archive-page .subscription-offer {
+    border-left: none;
+    border-top: 4px solid var(--teal);
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+
+  .archive-page .subscription-price {
+    justify-content: center;
+  }
+
+  .archive-page .archive-note {
+    margin-bottom: 1.8em;
+  }
+
   .post .notice-rates {
     padding: 4px 18px;
   }
@@ -1940,11 +2143,21 @@ button[type="submit"]:hover {
   .advertise-band {
     margin-top: 44px;
     padding: 28px 22px;
+    text-align: center;
+  }
+
+  .advertise-band p {
+    margin-inline: auto;
+  }
+
+  .service-lede-line {
+    display: inline;
   }
 
   .advertise-band-actions {
     grid-template-columns: minmax(0, 1fr);
     width: 100%;
+    justify-items: center;
   }
 
   .community-note {
@@ -1952,6 +2165,11 @@ button[type="submit"]:hover {
     gap: 24px;
     margin: 44px 0 52px;
     padding: 26px 22px;
+    text-align: center;
+  }
+
+  .community-note .eyebrow {
+    text-align: center;
   }
 
   .community-contact {
@@ -1960,22 +2178,100 @@ button[type="submit"]:hover {
     border-top: 1px solid var(--rule);
   }
 
+  .community-contact .contact-number {
+    justify-content: center;
+  }
+
   #footer {
     padding-top: 44px;
   }
 
+  .footer-inner .footer-identity {
+    text-align: center;
+  }
+
+  .footer-inner .footer-contact {
+    padding-top: 28px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    text-align: center;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-contact .footer-heading,
+  .footer-column .footer-heading {
+    display: inline-block;
+    margin: 0 auto 14px;
+  }
+
+  .footer-contact address {
+    margin-bottom: 14px;
+  }
+
+  #footer .footer-phone {
+    margin-bottom: 6px;
+    font-size: 1.5rem;
+  }
+
+  #footer .footer-hours {
+    margin-bottom: 16px;
+  }
+
   .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
     margin-top: 36px;
+    padding: 22px 0 20px;
+    text-align: center;
+  }
+
+  #footer .footer-bottom p:nth-of-type(1) {
+    order: 1;
+  }
+
+  #footer .footer-bottom p:nth-of-type(2) {
+    order: 2;
+    padding-top: 10px;
+    margin-top: 4px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+  }
+
+  #footer .footer-bottom-link {
+    order: 3;
+  }
+
+  #footer .back-to-top {
+    order: 4;
+    justify-content: center;
+    width: 100%;
+    max-width: 220px;
+    min-height: 48px;
+    margin-top: 14px;
+    padding: 0 20px;
+    border: 2px solid rgb(255 255 255 / 35%);
+    border-radius: 6px;
+  }
+
+  #footer .back-to-top:hover {
+    background: var(--teal-hover);
   }
 }
 
 @media (max-width: 560px) {
-  .trust-strip, .service-grid, .contact-details, .footer-inner {
+  .trust-strip, .service-grid, .contact-details {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .footer-inner {
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .footer-inner .footer-identity,
+  .footer-inner .footer-contact {
+    grid-column: 1 / -1;
   }
 
   .service-item {
@@ -2005,10 +2301,6 @@ button[type="submit"]:hover {
 
   .archive-file > span[aria-hidden] {
     margin-left: 2px;
-  }
-
-  .footer-bottom {
-    display: grid;
   }
 }
 
@@ -2068,17 +2360,11 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 400px) {
-  html.js .menu-toggle {
-    gap: 10px;
-    padding: 0 12px;
+  html.js .menu-bar {
+    column-gap: 6px;
   }
 
-  html.js .menu-actions {
-    gap: 6px;
-    padding-left: 6px;
-  }
-
-  #menu .menu-subscribe, #menu .menu-phone {
+  html.js .menu-toggle, #menu .menu-subscribe, #menu .menu-phone {
     padding: 0 12px;
   }
 }

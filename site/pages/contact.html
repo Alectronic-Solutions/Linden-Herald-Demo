@@ -10,7 +10,7 @@
                     <div>
                         <h2>Give us a call</h2>
                         <a class="contact-number" href="tel:+12097728854">(209) 772-8854</a>
-                        <p>Our phone line is available 24 hours, 7 days a week.</p>
+                        <p>Our phone line is available 24 hours,<br class="phone-break"> 7 days a week.</p>
                     </div>
                     <div>
                         <h2>Write to us</h2>
@@ -20,7 +20,8 @@
                 <form id="contact-form">
                     <fieldset>
                         <legend>Send a message</legend>
-                        <p class="form-hint">Please include an email address or phone number so we can reply.</p>
+                        <p class="form-hint" id="reply-hint">Please include an email address or phone number so we can reply.</p>
+                        <p class="form-error" id="reply-error" role="alert" hidden>Please add an email address or phone number so we can reply to you.</p>
                         <div class="form-field">
                             <label for="lhname">Name</label>
                             <input type="text" name="lhname" id="lhname" maxlength="40" autocomplete="name" required>

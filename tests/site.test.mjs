@@ -51,6 +51,12 @@ for (const target of Object.keys(targets)) {
   });
 
   test(`${target}: sitemap and robots.txt point at the right site`, async () => {
+    if (!site.indexable) {
+      const files = await readdir(builds[target]);
+      assert(!files.includes('sitemap.xml') && !files.includes('robots.txt'), 'the noindex demo lists its pages for crawlers');
+      assert((await read(target, 'index.html')).includes('<meta name="robots" content="noindex, nofollow">'));
+      return;
+    }
     const sitemap = await read(target, 'sitemap.xml');
     for (const page of pages.filter(page => !page.notFound)) assert(sitemap.includes(`<loc>${site.url + page.path}</loc>`), page.file);
     assert(!sitemap.includes('404'));
@@ -105,7 +111,9 @@ for (const mount of ['/', '/Linden-Herald-Demo/']) {
       const response = await fetch(url);
       assert.equal(response.status, page.notFound ? 404 : 200, url);
       const html = await response.text();
-      for (const [, reference] of html.matchAll(/\b(?:href|src|srcset)="([^"]+)"/g)) {
+      const references = [...html.matchAll(/\b(href|src|srcset)="([^"]+)"/g)]
+        .flatMap(([, attr, value]) => attr === 'srcset' ? value.split(/,\s*/).map(candidate => candidate.split(/\s+/)[0]) : [value]);
+      for (const reference of references) {
         if (reference.startsWith('tel:')) {
           assert.equal(reference, 'tel:+12097728854');
           continue;

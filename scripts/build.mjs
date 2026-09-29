@@ -11,6 +11,8 @@ import { targets, business, pages, noticeRates, noticeFaq } from '../site.config
 const project = fileURLToPath(new URL('../', import.meta.url));
 const source = resolve(project, 'site');
 const today = new Date().toISOString().slice(0, 10);
+// Years in print, rounded down to five ("more than 65 years").
+const yearsPublished = Math.floor((new Date().getFullYear() - Number(business.foundingDate)) / 5) * 5;
 
 const esc = text => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const hash = text => createHash('sha256').update(text).digest('hex').slice(0, 10);
@@ -176,7 +178,9 @@ function headHtml(page, site, assets, issues) {
     "<script>document.documentElement.classList.add('js')</script>",
     `<title>${esc(page.title)}</title>`,
     `<meta name="description" content="${esc(page.description)}">`,
-    !site.indexable || page.notFound ? '<meta name="robots" content="noindex, follow">' : '',
+    // The demo also says nofollow so crawlers skip its PDFs, which cannot carry a noindex tag.
+    !site.indexable ? '<meta name="robots" content="noindex, nofollow">' : '',
+    site.indexable && page.notFound ? '<meta name="robots" content="noindex, follow">' : '',
     page.notFound ? '' : `<link rel="canonical" href="${url}">`,
     '<meta name="theme-color" content="#005555">',
     '<meta name="format-detection" content="telephone=no">',
@@ -229,8 +233,12 @@ function markCurrent(html, current) {
 }
 
 // The 404 page is served for any missing path, so its links must be absolute.
-const absolutize = (html, base) => html.replace(/\b(href|src|srcset)="(?![#/]|[a-z]+:)([^"]*)"/g,
-  (_, attr, value) => `${attr}="${base}${value.replace(/^\.\//, '')}"`);
+const absolutize = (html, base) => html
+  .replace(/\b(href|src)="(?![#/]|[a-z]+:)([^"]*)"/g,
+    (_, attr, value) => `${attr}="${base}${value.replace(/^\.\//, '')}"`)
+  .replace(/\bsrcset="([^"]*)"/g, (_, value) => `srcset="${value.split(/,\s*/)
+    .map(candidate => /^[/#]|^[a-z]+:/.test(candidate) ? candidate : base + candidate.replace(/^\.\//, ''))
+    .join(', ')}"`);
 
 const minifyHtml = html => html
   .replace(/<!--[\s\S]*?-->/g, '')
@@ -295,7 +303,8 @@ export async function build({ target = 'pages', out = resolve(project, '_site') 
 
   for (const page of pages) {
     let main = await readFile(resolve(source, 'pages', page.file), 'utf8');
-    main = main.replace('{{rates}}', ratesHtml).replace('{{faq}}', faqHtml).replace('{{issues}}', issuesHtml(issues));
+    main = main.replace('{{rates}}', ratesHtml).replace('{{faq}}', faqHtml).replace('{{issues}}', issuesHtml(issues))
+      .replace('{{yearsPublished}}', yearsPublished);
     let html = layout
       .replace('{{head}}', () => headHtml(page, site, assets, issues))
       .replace('{{bodyClass}}', page.bodyClass ? ` class="${page.bodyClass}"` : '')
@@ -308,11 +317,15 @@ export async function build({ target = 'pages', out = resolve(project, '_site') 
     await writeFile(resolve(out, page.file), minifyHtml(html) + '\n');
   }
 
-  const urls = pages.filter(page => !page.notFound).map(page =>
-    `<url><loc>${site.url + page.path}</loc><lastmod>${lastModified('site/pages/' + page.file)}</lastmod><priority>${page.priority}</priority></url>`);
-  for (const issue of issues) urls.push(`<url><loc>${site.url + issue.pdf}</loc><lastmod>${issue.date}</lastmod><priority>0.5</priority></url>`);
-  await writeFile(resolve(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
-  await writeFile(resolve(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.url}sitemap.xml\n`);
+  // Only the indexable site gets a sitemap. The demo lives in a subfolder,
+  // where crawlers ignore robots.txt, and a sitemap would only list its PDFs.
+  if (site.indexable) {
+    const urls = pages.filter(page => !page.notFound).map(page =>
+      `<url><loc>${site.url + page.path}</loc><lastmod>${lastModified('site/pages/' + page.file)}</lastmod><priority>${page.priority}</priority></url>`);
+    for (const issue of issues) urls.push(`<url><loc>${site.url + issue.pdf}</loc><lastmod>${issue.date}</lastmod><priority>0.5</priority></url>`);
+    await writeFile(resolve(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
+    await writeFile(resolve(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.url}sitemap.xml\n`);
+  }
 
   if (target === 'pages') {
     await writeFile(resolve(out, '.nojekyll'), '');

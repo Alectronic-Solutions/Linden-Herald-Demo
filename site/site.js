@@ -67,8 +67,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lastFocused) lastFocused.focus();
   };
 
+  // The hint asks for an email or phone number; without either we cannot reply.
+  const email = document.getElementById('lhemail');
+  const phone = document.getElementById('lhphone');
+  const replyError = document.getElementById('reply-error');
+  const setReplyError = show => {
+    replyError.hidden = !show;
+    [email, phone].forEach(field => {
+      if (show) {
+        field.setAttribute('aria-invalid', 'true');
+        field.setAttribute('aria-describedby', 'reply-error');
+      } else {
+        field.removeAttribute('aria-invalid');
+        field.removeAttribute('aria-describedby');
+      }
+    });
+  };
+  [email, phone].forEach(field => field.addEventListener('input', () => {
+    if (!replyError.hidden && (email.value.trim() || phone.value.trim())) setReplyError(false);
+  }));
+
   form.addEventListener('submit', event => {
     event.preventDefault();
+    if (!email.value.trim() && !phone.value.trim()) {
+      setReplyError(true);
+      email.focus();
+      return;
+    }
     openModal();
   });
   closeButton.addEventListener('click', closeModal);
