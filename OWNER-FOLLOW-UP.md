@@ -1,9 +1,9 @@
 # Questions for the Linden Herald owner
 
-These details need owner confirmation before the demo becomes a live business website. Existing prices and business claims have not been independently confirmed.
+These details need owner confirmation before the demo becomes a live business website. The annual subscription price of $42 for 52 issues has been confirmed by Alec; other prices and business claims still need confirmation.
 
 ## Subscription details
-- Is $42 still the annual price for 52 mailed issues in San Joaquin County? When did the current rate take effect?
+- Confirmed: $42 for 52 mailed issues in San Joaquin County.
 - Are check and money order the accepted payment methods? Is online payment wanted later?
 - What are the rates and eligibility for delivery outside the county?
 - What should subscribers expect for processing and first-issue delivery?
