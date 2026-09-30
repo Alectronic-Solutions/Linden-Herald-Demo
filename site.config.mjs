@@ -82,7 +82,7 @@ export const pages = [
     path: 'privacy',
     name: 'Privacy Policy',
     title: 'Privacy Policy | Linden Herald',
-    description: 'How the Linden Herald website collects, uses and protects the information you share with us, including messages sent through our contact form.',
+    description: 'Privacy information for the Linden Herald website demo, including how its sample contact form works and what happens when you visit the site.',
     priority: '0.3'
   },
   {

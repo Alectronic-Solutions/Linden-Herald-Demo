@@ -9,9 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!menuToggle || !submenuToggle) return;
   const dropdown = submenuToggle.closest('.has-dropdown');
 
+  // Measure the closed sticky bar, including any wrapped row at narrow widths.
+  // Update before anchor navigation so headings land below the entire bar.
+  const updateAnchorOffset = () => {
+    if (menu.classList.contains('is-open')) return;
+    document.documentElement.style.scrollPaddingTop = `${Math.ceil(menu.getBoundingClientRect().height) + 16}px`;
+  };
+  updateAnchorOffset();
+  if ('ResizeObserver' in window) new ResizeObserver(updateAnchorOffset).observe(menu);
+  window.addEventListener('resize', updateAnchorOffset);
+
   const setMenu = open => {
     menuToggle.setAttribute('aria-expanded', String(open));
     menu.classList.toggle('is-open', open);
+    if (!open) updateAnchorOffset();
   };
   const setSubmenu = open => {
     submenuToggle.setAttribute('aria-expanded', String(open));

@@ -910,15 +910,35 @@ html:not(.js) #menu .has-dropdown > a {
   text-align: right;
 }
 
-/* Legal notice questions: always open, no hidden answers to discover. */
+/* Native disclosures keep questions compact and work without JavaScript. */
 .faq {
   margin: 0 0 1.5em;
   border-top: 1px solid var(--rule);
 }
 
 .faq-item {
-  padding: 20px 0 4px;
+  padding: 0;
   border-bottom: 1px solid var(--rule);
+}
+
+.faq-item summary {
+  padding: 18px 0;
+  cursor: pointer;
+  color: var(--teal-dark);
+}
+
+.faq-item summary:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 4px;
+}
+
+.faq-item summary h3 {
+  display: inline;
+}
+
+.faq-item > p {
+  margin-top: 0;
+  text-align: left;
 }
 
 .faq-item h3 {
@@ -2394,5 +2414,61 @@ button[type="submit"]:hover {
 
   .service-item:hover, .service-item:hover .service-art {
     transform: none;
+  }
+}
+
+/* Keep the existing mobile design, with less repetition and easier reading. */
+@media (max-width: 700px) {
+  .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
+  .post .help-note > p,
+  .post .subscription-offer > p:not(.eyebrow):not(.subscription-price),
+  .post .rate-note,
+  .post .faq,
+  .contact-page .form-field,
+  .contact-page .form-hint,
+  .contact-page .form-error,
+  .service-item > p:not(.service-category):not(.service-figure),
+  .community-note p:not(.eyebrow),
+  .advertise-band p {
+    text-align: left;
+    text-wrap: pretty;
+  }
+
+  /* These sidebars become repeat promotions below the main phone content. */
+  #sidebar .sidebar-card {
+    display: none;
+  }
+
+  .home-page #page-bgtop {
+    gap: 20px;
+  }
+
+  .home-page .trust-strip {
+    margin-top: 24px;
+    padding: 14px 0;
+  }
+
+  .home-services {
+    margin-top: 24px;
+    padding: 28px 0 32px;
+  }
+
+  .service-item {
+    padding: 20px;
+  }
+
+  .service-art {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+  }
+
+  .service-item > p:not(.service-category):not(.service-figure) {
+    margin-bottom: 16px;
+  }
+
+  /* The service cards immediately above already offer these same actions. */
+  .home-page .advertise-band {
+    display: none;
   }
 }

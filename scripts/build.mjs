@@ -71,7 +71,7 @@ ${noticeRates.map(rate => `<li><span class="rate-name">${esc(rate.name)}</span>$
 </ul>`;
 
 const faqHtml = `<div class="faq">
-${noticeFaq.map(item => `<div class="faq-item"><h3>${esc(item.q)}</h3><p>${phoneLink(esc(item.a))}</p></div>`).join('\n')}
+${noticeFaq.map(item => `<details class="faq-item"><summary><h3>${esc(item.q)}</h3></summary><p>${phoneLink(esc(item.a))}</p></details>`).join('\n')}
 </div>`;
 
 function structuredData(page, site, issues) {
