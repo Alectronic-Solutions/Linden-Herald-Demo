@@ -1134,6 +1134,7 @@ button[type="submit"]:hover {
 
 .home-page .post .entry > p:not(.lead) {
   max-width: 36em;
+  text-indent: 1.5em;
 }
 
 .trust-strip {
@@ -2548,13 +2549,17 @@ button[type="submit"]:hover {
   }
 
   /* About page copy, and the front page caption in the sidebar on every page. */
-  .about-page .post .entry > p:not(.lead),
+  .about-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
   .edition-caption {
     text-align: center;
   }
 
+  .about-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label) {
+    text-indent: 1.5em;
+  }
+
   /* Advertise page copy, the notice card, the "let's talk" box and the common questions. */
-  .advertise-page .post .entry > p:not(.lead),
+  .advertise-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
   .advertise-page .post .help-note > p,
   .advertise-page .post .notice-exclusive p,
   .advertise-page .post .rate-note,
@@ -2563,25 +2568,46 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .advertise-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
+  .advertise-page .post .notice-exclusive p,
+  .advertise-page .faq-item > p {
+    text-indent: 1.5em;
+  }
+
   /* Sample issues page: the intro, the print offer and its note. */
-  .archive-page .post .entry > p:not(.lead),
+  .archive-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
   .archive-page .post .subscription-offer > p:not(.eyebrow):not(.subscription-price) {
     text-align: center;
   }
 
+  .archive-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label):not(.archive-note),
+  .archive-page .post .subscription-offer > p:not(.eyebrow):not(.subscription-price) {
+    text-indent: 1.5em;
+  }
+
   /* Contact page: the intro and the notes above the form. */
-  .contact-page .post .entry > p:not(.lead),
+  .contact-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
   .contact-page .form-hint,
   .contact-page .form-error {
     text-align: center;
   }
 
+  .contact-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label) {
+    text-indent: 1.5em;
+  }
+
   /* Subscribe page: the intro, the price box, the help note and the steps heading. The numbered steps stay left so the numbers line up. */
-  .subscribe-page .post .entry > p:not(.lead),
+  .subscribe-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
   .subscribe-page .subscription-offer > p:not(.eyebrow):not(.subscription-price),
   .subscribe-page .fine-print,
   .subscribe-page .help-note > p,
   .subscribe-page .steps-heading {
     text-align: center;
+  }
+
+  .subscribe-page .post .entry > p:not(.lead):not(.eyebrow):not(.mailing-address-label),
+  .subscribe-page .subscription-offer > p:not(.eyebrow):not(.subscription-price):not(.fine-print),
+  .subscribe-page .help-note > p:first-of-type {
+    text-indent: 1.5em;
   }
 }
