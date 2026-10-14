@@ -55,7 +55,7 @@ export const pages = [
     path: 'advertise',
     name: 'Advertise',
     title: 'San Joaquin County Legal Notices & DBA Publishing | Linden Herald',
-    description: 'Publish your DBA (fictitious business name), name change, divorce or summons notice in San Joaquin County from $105, with free proof of publication.',
+    description: 'Publish your DBA (fictitious business name), name change, divorce or summons notice in San Joaquin County from $95, with free proof of publication.',
     bodyClass: 'advertise-page',
     priority: '0.9'
   },
@@ -63,8 +63,8 @@ export const pages = [
     file: 'archive.html',
     path: 'archive',
     name: 'Archive',
-    title: 'Linden Herald Archive | Past Issues of Linden, CA News',
-    description: 'Read past issues of the Linden Herald free online. Weekly local news from Linden and East San Joaquin County, California, as printable PDFs.',
+    title: 'Sample Issues of the Linden Herald | Linden, CA News',
+    description: 'Read a sampling of past Linden Herald issues free online as PDFs. The full paper comes in print every week, by mail for $42 a year.',
     bodyClass: 'archive-page',
     priority: '0.8'
   },
@@ -96,7 +96,7 @@ export const pages = [
 
 // Legal notice prices, shown on the advertise page and in its structured data.
 export const noticeRates = [
-  { name: 'Fictitious Business Name (DBA)', price: 105, note: 'For a single owner/one business name. $145 more for corporations, LLCs, partnerships, and husband and wife (extra names $10 each).' },
+  { name: 'Fictitious Business Name (DBA)', price: 95, note: 'For a single owner/one business name. $145 more for corporations, LLCs, partnerships, and husband and wife (extra names $10 each).' },
   { name: 'Change of Name Petition', price: 425 },
   { name: 'Family Law (divorce)', price: 425 },
   { name: 'Trustee Sales' },
@@ -112,7 +112,7 @@ export const noticeFaq = [
   },
   {
     q: 'How much does it cost to publish a DBA in San Joaquin County?',
-    a: 'Publishing a fictitious business name statement in the Linden Herald costs $105 for a single owner with one business name. Corporations, LLCs, partnerships, and husband and wife owners pay $145 more, and extra business names are $10 each. Proof of publication is included at no extra cost.'
+    a: 'Publishing a fictitious business name statement in the Linden Herald costs $95 for a single owner with one business name. Corporations, LLCs, partnerships, and husband and wife owners pay $145 more, and extra business names are $10 each. Proof of publication is included at no extra cost.'
   },
   {
     q: 'Can I publish my San Joaquin County legal notice in the Linden Herald?',

@@ -58,7 +58,7 @@ const issueHtml = (issue, index) => `<li><a href="${issue.pdf}" target="_blank" 
 
 function issuesHtml(issues) {
   const years = [...new Set(issues.map(issue => issue.date.slice(0, 4)))];
-  return years.map(year => `<h2 class="archive-year">${year} editions</h2>
+  return years.map(year => `<h2 class="archive-year">Selected ${year} editions</h2>
 <ul class="archive-list">
 ${issues.filter(issue => issue.date.startsWith(year)).map(issue => issueHtml(issue, issues.indexOf(issue))).join('\n')}
 </ul>`).join('\n');
@@ -154,7 +154,7 @@ function structuredData(page, site, issues) {
   if (page.path === 'archive') {
     const periodical = { '@type': 'Periodical', '@id': site.url + '#periodical', name: business.name, publisher: org, inLanguage: 'en-US' };
     graph.push(periodical, {
-      '@type': 'ItemList', '@id': pageUrl + '#issues', name: 'Past issues of the Linden Herald',
+      '@type': 'ItemList', '@id': pageUrl + '#issues', name: 'Sample issues of the Linden Herald',
       itemListElement: issues.map((issue, index) => ({
         '@type': 'ListItem', position: index + 1,
         item: {

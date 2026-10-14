@@ -14,7 +14,7 @@ These details need owner confirmation before the demo becomes a live business we
 - What are the rates, minimum bookings and any repeat-ad discounts?
 - What are the booking and artwork deadlines, and accepted file formats?
 - Is design help offered? How should a business request a quote and send artwork?
-- What are the verified circulation and readership figures? The existing 5,000 figure describes area population, not confirmed readership.
+- Decided: describe the paper's reach only as serving the Linden area, a community of about 5,000 residents. The site never states audience figures.
 
 ## People behind the paper
 - Who should be introduced on the About page (owner, editor and/or reporters)?
@@ -22,8 +22,8 @@ These details need owner confirmation before the demo becomes a live business we
 - Confirm the experience, ownership and geographic statements currently on the site.
 
 ## Archive
-- Should these be described as selected past issues, or is a complete weekly archive planned?
-- Is September 3, 2026 the latest issue intended for the demo? Which missing or newer issues should be added?
+- Decided: the page presents sample issues to encourage print subscriptions, not a complete weekly archive.
+- Which issues should appear as samples? The demo currently shows seven from June to September 2026.
 - Confirm the library location and availability of older editions.
 
 ## Phone availability
@@ -32,7 +32,7 @@ These details need owner confirmation before the demo becomes a live business we
 - Once confirmed, use the same wording on Home, About, Advertise, Contact, the FAQ and footer.
 
 ## Legal notices and launch
-- Confirm all notice rates, including whether the additional $145 is a surcharge, and all publication/document deadlines.
+- Confirmed: the fictitious business name rate is $95. Confirm the remaining notice rates, including whether the additional $145 is a surcharge, and all publication/document deadlines.
 - Confirm proof-of-publication handling and the claim "Only at The Linden Herald."
 - Which email/service should receive real contact messages at launch, and how long will messages be retained?
 - Confirm hosting and any analytics before replacing the demo privacy notice and enabling the contact form.
