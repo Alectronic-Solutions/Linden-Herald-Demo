@@ -33,6 +33,6 @@ These details need owner confirmation before the demo becomes a live business we
 
 ## Legal notices and launch
 - Confirmed: the fictitious business name rate is $95. Confirm the remaining notice rates, including whether the additional $145 is a surcharge, and all publication/document deadlines.
-- Confirm proof-of-publication handling and the claim "Only at The Linden Herald."
+- Confirmed by Alec: the Herald is the only paper that files the Proof of Publication for free after a fictitious business name notice runs ("Only at the Linden Herald," now featured on Home).
 - Which email/service should receive real contact messages at launch, and how long will messages be retained?
 - Confirm hosting and any analytics before replacing the demo privacy notice and enabling the contact form.

@@ -28,7 +28,7 @@ export const pages = [
     file: 'index.html',
     path: '',
     title: 'Linden Herald | Linden, CA Community Newspaper Since 1959',
-    description: "Linden, California's weekly community newspaper since 1959. Local news, sports, schools and agriculture, plus San Joaquin County legal notices.",
+    description: "Linden, California's hometown weekly since 1959: local news, sports, schools, farming, sheriff and fire calls, plus free DBA proof of publication filing.",
     bodyClass: 'home-page',
     priority: '1.0'
   },
@@ -37,7 +37,7 @@ export const pages = [
     path: 'about',
     name: 'About',
     title: 'About the Linden Herald | Linden, CA Newspaper Since 1959',
-    description: "Meet the Linden Herald, East San Joaquin County's locally owned weekly newspaper since 1959 and an adjudicated newspaper of general circulation.",
+    description: 'The Linden Herald has served Linden, CA, a Central Valley farming community, every week since 1959. Local news, sports, history and county legal notices.',
     bodyClass: 'about-page',
     priority: '0.7'
   },

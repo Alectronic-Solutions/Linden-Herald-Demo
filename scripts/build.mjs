@@ -91,7 +91,7 @@ function structuredData(page, site, issues) {
       url: site.url,
       logo: { '@type': 'ImageObject', url: site.url + 'images/logo-512.png', width: 512, height: 512 },
       image: site.url + 'images/og-image.jpg',
-      description: "Linden, California's weekly community newspaper since 1959 and an adjudicated newspaper of general circulation for San Joaquin County.",
+      description: "The weekly community newspaper of Linden, California, a farming community in San Joaquin County, since 1959. An adjudicated newspaper of general circulation.",
       slogan: business.tagline,
       foundingDate: business.foundingDate,
       foundingLocation: { '@type': 'Place', name: 'Linden, California' },
