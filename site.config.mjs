@@ -127,10 +127,6 @@ export const noticeFaq = [
     a: 'A change of name notice usually runs once a week for four weeks in a row before your court hearing date. Always follow the dates and instructions in your court order.'
   },
   {
-    q: 'Do you file the proof of publication?',
-    a: 'Yes, at no extra cost. When your notice has finished running, we file the Proof of Publication with the San Joaquin County Court or Recorder and send a copy to the petitioner or registrant.'
-  },
-  {
     q: 'How do I get started?',
     a: 'Call (209) 772-8854. Our phone is answered 24 hours a day, seven days a week. Have your filed statement or court order nearby, and we will walk you through the rest.'
   }
